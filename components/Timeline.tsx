@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Activity } from '../types';
-import { CheckCircle2, Circle, MapPin, AlertTriangle, Clock, ArrowRight, ExternalLink, Navigation, AlertCircle, Headphones } from 'lucide-react';
+import { CheckCircle2, Circle, MapPin, AlertTriangle, Clock, ArrowRight, ExternalLink, Navigation, AlertCircle, Headphones, Ticket } from 'lucide-react';
 import { calculateDuration, calculateTimeProgress, formatMinutes } from '../services/utils';
 
 interface TimelineProps {
@@ -150,6 +150,12 @@ const Timeline: React.FC<TimelineProps> = ({ itinerary, onToggleComplete, onLoca
                                 <button onClick={() => onOpenAudioGuide(act)} className="flex items-center text-[10px] font-bold text-rose-700 bg-rose-50 px-3 py-2 rounded-xl border border-rose-100 shadow-sm active:bg-rose-100">
                                     <Headphones size={12} className="mr-1.5" /> AUDIOGUÍA
                                 </button>
+                            )}
+                            
+                            {act.bookingUrl && (
+                                <a href={act.bookingUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-[10px] font-bold text-emerald-700 bg-emerald-50 px-3 py-2 rounded-xl border border-emerald-100 hover:bg-emerald-100 shadow-sm transition-colors">
+                                    <Ticket size={12} className="mr-1.5" /> TICKETS
+                                </a>
                             )}
 
                             {act.googleMapsUrl && (
