@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'florencia-guide-v2';
+const CACHE_NAME = 'florencia-guide-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -32,5 +32,18 @@ self.addEventListener('activate', (e) => {
 });
 
 self.addEventListener('fetch', (e) => {
-  e.respondWith(caches.match(e.request).then(res => res || fetch(e.request)));
+  e.respondWith(
+    caches.match(e.request).then(res => {
+        // Estrategia Stale-While-Revalidate simple
+        return res || fetch(e.request).then(response => {
+            return caches.open(CACHE_NAME).then(cache => {
+                // Solo cachear peticiones válidas y locales/CDN confiables
+                if (e.request.url.startsWith('http')) {
+                    cache.put(e.request, response.clone());
+                }
+                return response;
+            });
+        });
+    })
+  );
 });

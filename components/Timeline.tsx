@@ -160,7 +160,7 @@ const Timeline: React.FC<TimelineProps> = ({ itinerary, onToggleComplete, onLoca
 
                             {act.googleMapsUrl && (
                                 <a href={act.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-[10px] font-bold text-stone-600 bg-white px-3 py-2 rounded-xl border border-stone-200 hover:bg-stone-50 shadow-sm transition-colors">
-                                    <ExternalLink size={12} className="mr-1.5" /> MAPS
+                                    <ExternalLink size={12} className="mr-1.5" /> GOOGLE MAPS
                                 </a>
                             )}
                             
