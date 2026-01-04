@@ -76,9 +76,9 @@
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "leaflet": "https://esm.sh/leaflet@^1.9.4",
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "recharts": "https://esm.sh/recharts@^3.6.0"
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "leaflet": "https://esm.sh/leaflet@^1.9.4"
   }
 }
 </script>
@@ -243,9 +243,22 @@
             [43.775589, 11.24897], [43.775754, 11.249213], [43.77578, 11.249253], [43.775823, 11.249317], 
             [43.775849, 11.24934], [43.776069, 11.249237], [43.776198, 11.249178], [43.776226, 11.249165], 
             [43.776155, 11.248885]
-        ];
+];
 
         const INITIAL_ITINERARY = [
+            {
+                id: "0",
+                title: "Llegada a Puerto Livorno",
+                startTime: "07:00",
+                endTime: "07:00",
+                locationName: "Puerto de Livorno",
+                coords: { lat: 43.552781, lng: 10.301391 },
+                description: "Llegada del crucero al puerto de Livorno. Inicio de la escala.",
+                keyDetails: "Contemplar la maniobra de atraque.",
+                type: "logistics",
+                completed: false,
+                priceEUR: 0
+            },
             {
                 id: "1",
                 title: "Desembarco y llegada al Shuttle",

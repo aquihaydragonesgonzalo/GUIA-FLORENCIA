@@ -116,6 +116,19 @@ export const FLORENCE_WALK_TRACK: [number, number][] = [
 
 export const INITIAL_ITINERARY: Activity[] = [
  {
+  id: "0",
+  title: "Llegada a Puerto Livorno",
+  startTime: "07:00",
+  endTime: "07:00",
+  locationName: "Puerto de Livorno",
+  coords: { lat: 43.552781, lng: 10.301391 },
+  description: "Llegada del crucero al puerto de Livorno. Inicio de la escala.",
+  keyDetails: "Contemplar la maniobra de atraque.",
+  type: "logistics",
+  completed: false,
+  priceEUR: 0
+ },
+ {
   id: "1",
   title: "Desembarco y llegada al Shuttle",
   startTime: "07:15",
